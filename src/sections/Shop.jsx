@@ -6,6 +6,25 @@ import styled from "styled-components";
 import perfumesData from "../assets/data/perfumes";
 import { MdExitToApp } from "react-icons/md";
 
+const Drawer = styled.div`
+  touch-action: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25rem;
+  max-width: 90vw;
+  height: 100vh;
+  background: #fff;
+  padding: 2rem;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow-y: auto;
+
+  @media (max-width: 48em) {
+    padding: 1.5rem 1rem;
+  }
+`;
+
 const Section = styled(motion.section)`
   min-height: 100vh;
   height: auto;
@@ -93,6 +112,14 @@ const Right = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 48em) {
+    left: 40%;
+    padding-left: 20%;
+  }
+  @media (max-width: 30em) {
+    left: 45%;
+    padding-left: 15%;
+  }
 `;
 
 const Item = styled(motion.div)`
@@ -114,6 +141,10 @@ const Item = styled(motion.div)`
 
   @media (max-width: 48em) {
     width: 15rem;
+  }
+  @media (max-width: 30em) {
+    width: 12rem;
+    margin-right: 3rem;
   }
 `;
 //data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal"
@@ -252,19 +283,7 @@ const Shop = () => {
         ))}
       </Right>
       {isDrawerOpen && selectedProduct && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            right: 0,
-            width: "25rem",
-            height: "100vh",
-            background: "#fff",
-            padding: "2rem",
-            boxShadow: "-5px 0 10px rgba(0,0,0,0.3)",
-            zIndex: 1000,
-          }}
-        >
+        <Drawer>
           <button
             onClick={() => setDrawerOpen(false)}
             style={{ float: "right", fontWeight: "bold" }}
@@ -276,11 +295,11 @@ const Shop = () => {
             src={selectedProduct.img}
             alt={selectedProduct.name}
             style={{
-              width: "60%",
+              width: "100%",
+              maxWidth: "200px",
               height: "auto",
               borderRadius: "8px",
               marginTop: "1rem",
-              display: "block",
             }}
           />
           <p style={{ marginTop: "1rem" }}>
@@ -300,7 +319,7 @@ const Shop = () => {
           >
             Buy Now
           </button>
-        </div>
+        </Drawer>
       )}
     </Section>
   );
