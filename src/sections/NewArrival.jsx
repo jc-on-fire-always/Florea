@@ -4,10 +4,10 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 
-import img1 from "../assets/Images/11.jpg";
-import img2 from "../assets/Images/12.jpg";
-import img3 from "../assets/Images/13.jpg";
-import img4 from "../assets/Images/14.jpg";
+import img1 from "../assets/Images/11.webp";
+import img2 from "../assets/Images/12.webp";
+import img3 from "../assets/Images/13.webp";
+import img4 from "../assets/Images/14.webp";
 
 const Section = styled.section`
   min-height: 100vh;

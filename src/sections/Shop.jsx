@@ -150,7 +150,7 @@ const Shop = () => {
 
   const handleRazorpay = () => {
     const options = {
-      key: "rzp_test_JOyD807ifJJPn2",
+      key: process.env.REACT_APP_RAZORPAY_KEY,
       amount: selectedProduct.price * 100, // Amount in paise
       currency: "INR",
       name: selectedProduct.name,

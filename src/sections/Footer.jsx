@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import styled from "styled-components";
+import img from "../assets/logog.png";
 
 const Section = styled.section`
   min-height: 100vh;
@@ -28,6 +29,14 @@ const LogoContainer = styled.div`
   img {
     width: 10vw;
     height: auto;
+
+    @media (max-width: 768px) {
+      width: 20vw;
+    }
+
+    @media (max-width: 480px) {
+      width: 30vw;
+    }
   }
 
   h3 {
@@ -122,46 +131,7 @@ const Footer = () => {
   return (
     <Section>
       <LogoContainer>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="48px"
-          height="48px"
-          fill="none"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <g>
-            {/* Cap */}
-            <motion.path
-              d="M9 2h6a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-            />
-
-            {/* Neck */}
-            <motion.path
-              d="M10 5h4a0.5 0.5 0 0 1 0.5 0.5v1a0.5 0.5 0 0 1-0.5 0.5h-4a0.5 0.5 0 0 1-0.5-0.5v-1A0.5 0.5 0 0 1 10 5z"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
-            />
-
-            {/* Body */}
-            <motion.path
-              d="M7 8h10a1 1 0 0 1 1 1v9a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 1.5, ease: "easeInOut", delay: 0.6 }}
-            />
-          </g>
-        </svg>
-        <h3 data-scroll data-scroll-speed="-1">
-          Floréa
-        </h3>
+        <img src={img} alt="Floréa Logo" />
       </LogoContainer>
       <FooterComponent
         initial={{ y: "-400px" }}
